@@ -1,0 +1,37 @@
+{
+	"item.pm.titanium_ingot": "Titanium Ingot",
+	"item.pm.titanium_nugget": "Titanium Nugget",
+	"item.pm.raw_titanium": "Raw Titanium",
+	"item.pm.tomato": "Tomato",
+	"item.pm.smart_blow_torch": "Smart Blow Torch",
+	"item.pm.firestone": "Firestone",
+	"item.pm.ruby": "Ruby",
+	"item.pm.coal_coke": "Coal Coke",
+	
+	
+	"block.pm.titanium_ore": "Titanium Ore",
+	"block.pm.titanium_block": "Titanium Block",
+	"block.pm.titanium_stairs": "Titanium Stairs",
+	"block.pm.titanium_slab": "Titanium Slab",
+	"block.pm.titanium_wall": "Titanium Wall",
+	"block.pm.titanium_door": "Titanium Door",
+	"block.pm.titanium_trapdoor": "Titanium Trapdoor",
+	"block.pm.titanium_pressure_plate": "Titanium Pressure Plate",
+	"block.pm.titanium_button": "Titanium Button",
+	"block.pm.speedy_block": "Speedy Block",
+	"block.pm.ruby_ore": "Ruby Ore",
+	"block.pm.ruby_block": "Ruby Block",
+	"block.pm.ruby_stairs": "Ruby Stairs",
+	"block.pm.Ruby_slab": "Ruby Slab",
+	"block.pm.ruby_wall": "Ruby Wall",
+	"block.pm.firestone_block": "Firestone Block",
+	
+	
+	
+	"itemGroup.premierModTab": "Premier Mod",
+	
+	
+	"tooltip.pm.smart_blow_torch": "Press \u00A7eSHIFT\u00A7r for more informations",
+	"tooltip.pm.smart_blow_torch_shift": "Can transform ore into ingots without smelting\nCan also turn sand to glass instantly"
+
+}
