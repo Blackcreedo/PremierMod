@@ -7,6 +7,16 @@
 	"item.pm.firestone": "Firestone",
 	"item.pm.ruby": "Ruby",
 	"item.pm.coal_coke": "Coal Coke",
+	"item.pm.titanium_sword": "Titanium Sword",
+	"item.pm.titanium_pickaxe": "Titanium Pickaxe",
+	"item.pm.titanium_axe": "Titanium Axe",
+	"item.pm.titanium_shovel": "Titanium Shovel",
+	"item.pm.titanium_hoe": "Titanium Hoe",
+	"item.pm.ruby_sword": "Ruby Sword",
+	"item.pm.ruby_pickaxe": "Ruby Pickaxe",
+	"item.pm.ruby_shovel": "Ruby Shovel",
+	"item.pm.ruby_axe": "Ruby Axe",
+	"item.pm.ruby_hoe": "Ruby Hoe",
 	
 	
 	"block.pm.titanium_ore": "Titanium Ore",
