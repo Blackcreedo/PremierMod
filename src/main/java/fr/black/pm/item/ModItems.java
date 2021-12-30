@@ -107,8 +107,12 @@ public class ModItems
 			ITEMS.register("ruby_boots", () -> new ArmorItem(ModArmorMaterials.RUBY, EquipmentSlot.FEET,
 			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 
+	/* HORSE ARMOR */
+	public static final RegistryObject<Item> TITANIUM_HORSE_ARMOR =
+			ITEMS.register("titanium_horse_armor", () -> new HorseArmorItem(5, "titanium",
+			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 	
-	
+
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
