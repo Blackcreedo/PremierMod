@@ -1,5 +1,5 @@
 {
-  "parent": "pm:item/generated",
+  "parent": "item/generated",
   "textures": {
     "layer0": "pm:item/titanium_boots"
   }
