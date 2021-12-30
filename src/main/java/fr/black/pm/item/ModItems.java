@@ -1,10 +1,7 @@
 package fr.black.pm.item;
 
 import fr.black.pm.PremierMod;
-import fr.black.pm.item.custom.CoalCokeItem;
-import fr.black.pm.item.custom.Firestone;
-import fr.black.pm.item.custom.ModArmorItems;
-import fr.black.pm.item.custom.SmartBlowTorchItem;
+import fr.black.pm.item.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
@@ -111,8 +108,11 @@ public class ModItems
 	public static final RegistryObject<Item> TITANIUM_HORSE_ARMOR =
 			ITEMS.register("titanium_horse_armor", () -> new HorseArmorItem(5, "titanium",
 			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
-	
 
+	/* CUSTOM HORSE ARMOR */
+	public static final RegistryObject<Item> RUBY_HORSE_ARMOR =
+			ITEMS.register("ruby_horse_armor", () -> new ModHorseArmorItems(10, "ruby",
+			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
