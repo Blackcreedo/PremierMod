@@ -1,6 +1,7 @@
 package fr.black.pm;
 
 import fr.black.pm.block.ModBlocks;
+import fr.black.pm.enchantment.ModEnchantment;
 import fr.black.pm.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -23,7 +24,7 @@ public class PremierMod
 		
 		ModItems.register(eventBus);
 		ModBlocks.register(eventBus);
-		
+		ModEnchantment.register(eventBus);
 		eventBus.addListener(this::setup);
 		
 		
