@@ -3,6 +3,7 @@ package fr.black.pm.block;
 import fr.black.pm.PremierMod;
 import fr.black.pm.block.custom.FireStoneBlock;
 import fr.black.pm.block.custom.SpeedyBlock;
+import fr.black.pm.block.custom.TestBlock;
 import fr.black.pm.block.custom.TitaniumButtonBlock;
 import fr.black.pm.item.ModCreativeModeTab;
 import fr.black.pm.item.ModItems;
@@ -83,7 +84,8 @@ public class ModBlocks{
 	public static final RegistryObject<Block> FIRESTONE_BLOCK = 
 			registerBlock("firestone_block", () -> new FireStoneBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
 	
-
+	public static final RegistryObject<Block> TEST_BLOCK =
+			registerBlock("test_block", () -> new TestBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
 	
 
 	
