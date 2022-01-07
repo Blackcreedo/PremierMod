@@ -11,9 +11,11 @@ import fr.black.pm.item.ModItems;
 import net.minecraft.Util;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
@@ -69,21 +71,45 @@ public class SmartBlowTorchItem extends Item {
             Level level = pContext.getLevel();
             BlockPos positionClicked = pContext.getClickedPos();
             Block blockClicked = level.getBlockState(positionClicked).getBlock();
+			ItemStack stack = pContext.getItemInHand();
 
-            if(canBlowTorch(blockClicked)) {
-                ItemEntity entityItem = new ItemEntity(level,
-                        positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
-                        new ItemStack(BLOW_TORCH_ITEM_CRAFT.get(blockClicked).getItem(), BLOW_TORCH_ITEM_CRAFT.get(blockClicked).getCount()));
+			if(blockClicked == Blocks.MAGMA_BLOCK){
+				if(pContext.getHand() == InteractionHand.MAIN_HAND){
+					CompoundTag tag = new CompoundTag();
 
-                level.destroyBlock(positionClicked, false);
-                level.addFreshEntity(entityItem);
-                pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), p -> {
-                    p.broadcastBreakEvent(pContext.getHand());
-                });
-            } else {
-                pContext.getPlayer().sendMessage(new TextComponent("Cannot blow torch this Block!"),
-                        Util.NIL_UUID);
-            }
+					level.destroyBlock(positionClicked, false);
+
+					if(stack.hasTag()){
+						increaseCharge(stack);
+					} else {
+						tag.putInt("charge", 5);
+						stack.setTag(tag);
+					}
+
+					return InteractionResult.SUCCESS;
+				}
+			} else {
+				if(canBlowTorch(blockClicked)) {
+					if(stack.hasTag() && stack.getTag().getInt("charge") > 0){
+						ItemEntity entityItem = new ItemEntity(level,
+								positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
+								new ItemStack(BLOW_TORCH_ITEM_CRAFT.get(blockClicked).getItem(), BLOW_TORCH_ITEM_CRAFT.get(blockClicked).getCount()));
+
+						level.destroyBlock(positionClicked, false);
+						level.addFreshEntity(entityItem);
+						decreaseCharge(stack);
+						pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), p -> {
+							p.broadcastBreakEvent(pContext.getHand());
+						});
+					} else {
+						pContext.getPlayer().sendMessage(new TextComponent("Not enough charge left!"),
+								Util.NIL_UUID);
+					}
+				} else {
+					pContext.getPlayer().sendMessage(new TextComponent("Cannot blow torch this Block!"),
+							Util.NIL_UUID);
+				}
+			}
         }
 
         return InteractionResult.SUCCESS;
@@ -92,12 +118,21 @@ public class SmartBlowTorchItem extends Item {
     private boolean canBlowTorch(Block block) {
         return BLOW_TORCH_ITEM_CRAFT.containsKey(block);
     }
-    
+
+	private void increaseCharge(ItemStack stack){
+		stack.getTag().putInt("charge", stack.getTag().getInt("charge") + 5);
+	}
+
+	private void decreaseCharge(ItemStack stack){
+		stack.getTag().putInt("charge", stack.getTag().getInt("charge") - 1);
+	}
     
     
     @Override
 	public void appendHoverText(ItemStack pItemStack, Level pLevel, List<Component> tooltip, TooltipFlag Flag) {
-		
+		if(pItemStack.hasTag()){
+			tooltip.add(new TextComponent("Charge " + pItemStack.getTag().getInt("charge")));
+		}
 		if(Screen.hasShiftDown()) {
 			tooltip.add(new TranslatableComponent("tooltip.pm.smart_blow_torch_shift"));
 		} else {
