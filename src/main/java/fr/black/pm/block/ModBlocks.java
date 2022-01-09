@@ -1,21 +1,12 @@
 package fr.black.pm.block;
 
 import fr.black.pm.PremierMod;
-import fr.black.pm.block.custom.FireStoneBlock;
-import fr.black.pm.block.custom.SpeedyBlock;
-import fr.black.pm.block.custom.TestBlock;
-import fr.black.pm.block.custom.TitaniumButtonBlock;
+import fr.black.pm.block.custom.*;
 import fr.black.pm.item.ModCreativeModeTab;
 import fr.black.pm.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
-import net.minecraft.world.level.block.TrapDoorBlock;
-import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,7 +18,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks{
 
-	public static final DeferredRegister<Block> BLOCKS = 
+	public static final DeferredRegister<Block> BLOCKS =
 			DeferredRegister.create(ForgeRegistries.BLOCKS, PremierMod.MOD_ID);
 	
 	public static final RegistryObject<Block> TITANIUM_BLOCK = 
@@ -71,7 +62,7 @@ public class ModBlocks{
 			registerBlock("ruby_block", () -> new Block(BlockBehaviour.Properties.of(Material.AMETHYST).strength(5f).requiresCorrectToolForDrops()));
 	
 	public static final RegistryObject<Block> RUBY_STAIRS =
-			registerBlock("ruby_stairs", () -> new StairBlock(() -> RUBY_BLOCK.get().defaultBlockState(), 
+			registerBlock("ruby_stairs", () -> new StairBlock(() -> RUBY_BLOCK.get().defaultBlockState(),
 					BlockBehaviour.Properties.of(Material.AMETHYST).strength(5f).requiresCorrectToolForDrops()));
 	
 	public static final RegistryObject<Block> RUBY_SLAB = 
@@ -86,7 +77,16 @@ public class ModBlocks{
 	
 	public static final RegistryObject<Block> TEST_BLOCK =
 			registerBlock("test_block", () -> new TestBlock(BlockBehaviour.Properties.of(Material.STONE).strength(5f).requiresCorrectToolForDrops()));
-	
+
+	public static final RegistryObject<Block> TOMATO_PLANT =
+			BLOCKS.register("tomato_plant", () -> new TomatoPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+
+
+
+
+
+
 
 	
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block)
