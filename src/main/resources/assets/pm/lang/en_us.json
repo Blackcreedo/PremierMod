@@ -4,6 +4,8 @@
 	"item.pm.raw_titanium": "Raw Titanium",
 	"item.pm.tomato": "Tomato",
 	"item.pm.tomato_seeds": "Tomato Seeds",
+	"item.pm.pepper": "Pepper",
+	"item.pm.pepper_seeds": "Pepper Seeds",
 	"item.pm.smart_blow_torch": "Smart Blow Torch",
 	"item.pm.firestone": "Firestone",
 	"item.pm.ruby": "Ruby",
@@ -48,6 +50,7 @@
 	"block.pm.firestone_block": "Firestone Block",
 	"block.pm.test_block": "Test Block",
 	"block.pm.tomato_plant": "Tomato Plant",
+	"block.pm.pepper_plant": "Pepper Plant",
 	
 	
 	"itemGroup.premierModTab": "Premier Mod",

@@ -82,6 +82,10 @@ public class ModBlocks{
 			BLOCKS.register("tomato_plant", () -> new TomatoPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
 
 
+	public static final RegistryObject<Block> PEPPER_PLANT =
+			BLOCKS.register("pepper_plant", () -> new PepperPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+
 
 
 

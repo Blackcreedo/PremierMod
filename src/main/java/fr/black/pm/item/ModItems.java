@@ -33,6 +33,10 @@ public class ModItems
 	public static final RegistryObject<Item> TOMATO = 
 			ITEMS.register("tomato", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)
 					.food(new FoodProperties.Builder().nutrition(2).saturationMod(.2f).build())));
+
+	public static final RegistryObject<Item> PEPPER =
+			ITEMS.register("pepper", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)
+					.food(new FoodProperties.Builder().nutrition(3).saturationMod(.2f).build())));
 	
 	public static final RegistryObject<Item> SMART_BLOW_TORCH = 
 			ITEMS.register("smart_blow_torch", () -> new SmartBlowTorchItem(new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)
@@ -117,6 +121,11 @@ public class ModItems
 
 	public static final RegistryObject<Item> TOMATO_SEEDS = ITEMS.register("tomato_seeds",
 			() -> new ItemNameBlockItem(ModBlocks.TOMATO_PLANT.get(),
+					new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
+
+
+	public static final RegistryObject<Item> PEPPER_SEEDS = ITEMS.register("pepper_seeds",
+			() -> new ItemNameBlockItem(ModBlocks.PEPPER_PLANT.get(),
 			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 
 	
