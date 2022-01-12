@@ -38,6 +38,7 @@ public class PremierMod
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANIUM_TRAPDOOR.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.TOMATO_PLANT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_PLANT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORCHID.get(), RenderType.cutout());
 	}
 	
 	

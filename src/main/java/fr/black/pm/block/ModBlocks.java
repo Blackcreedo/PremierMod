@@ -4,6 +4,8 @@ import fr.black.pm.PremierMod;
 import fr.black.pm.block.custom.*;
 import fr.black.pm.item.ModCreativeModeTab;
 import fr.black.pm.item.ModItems;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -84,6 +86,9 @@ public class ModBlocks{
 
 	public static final RegistryObject<Block> PEPPER_PLANT =
 			BLOCKS.register("pepper_plant", () -> new PepperPlantBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT)));
+
+	public static final RegistryObject<Block> ORCHID =
+			registerBlock("orchid", () -> new FlowerBlock(MobEffects.BLINDNESS, 2, BlockBehaviour.Properties.copy(Blocks.DANDELION)));
 
 
 
