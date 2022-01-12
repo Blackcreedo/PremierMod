@@ -59,6 +59,7 @@
 	"tooltip.pm.smart_blow_torch": "Press \u00A7eSHIFT\u00A7r for more informations",
 	"tooltip.pm.smart_blow_torch_shift": "\nCan transform ore into ingots without smelting\nCan also turn sand to glass instantly\nCharge it by right-Clicking on a Magma Block",
 
-	"enchantment.pm.lightning_striker": "Lightning Striker"
+	"enchantment.pm.lightning_striker": "Lightning Striker",
+	"enchantment.pm.lightning_striker_bis": "Lightning Striker Curse"
 
 }
