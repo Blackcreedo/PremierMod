@@ -31,7 +31,7 @@ public class LightningStrikerEnchantmentBis extends Enchantment {
 
     @Override
     public void doPostAttack(LivingEntity pAttacker, Entity pTarget, int pLevel) {
-        if (called){called = false;}
+        if (called){called = false;}  // fix the 2 times call
         else{
             called = true;
             player = (ServerPlayer) pAttacker;
