@@ -52,6 +52,12 @@
 	"block.pm.tomato_plant": "Tomato Plant",
 	"block.pm.pepper_plant": "Pepper Plant",
 	"block.pm.orchid": "Orchid",
+	"block.pm.redwood_log": "Redwood Log",
+	"block.pm.stripped_redwood_log": "Stripped Redwood Log",
+	"block.pm.redwood_wood": "Redwood Wood",
+	"block.pm.stripped_redwood_wood": "Stripped Redwood Wood",
+	"block.pm.redwood_planks": "Redwood Planks",
+
 	
 	
 	"itemGroup.premierModTab": "Premier Mod",

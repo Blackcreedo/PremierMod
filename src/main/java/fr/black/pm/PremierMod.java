@@ -1,10 +1,13 @@
 package fr.black.pm;
 
+import com.google.common.collect.ImmutableMap;
 import fr.black.pm.block.ModBlocks;
 import fr.black.pm.enchantment.ModEnchantment;
 import fr.black.pm.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -26,13 +29,14 @@ public class PremierMod
 		ModBlocks.register(eventBus);
 		ModEnchantment.register(eventBus);
 		eventBus.addListener(this::setup);
+		eventBus.addListener(this::setupClient);
 		
 		
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 	
 	
-	private void setup(final FMLCommonSetupEvent event) 
+	private void setupClient(final FMLCommonSetupEvent event)
 	{
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANIUM_DOOR.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.TITANIUM_TRAPDOOR.get(), RenderType.cutout());
@@ -40,6 +44,14 @@ public class PremierMod
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.PEPPER_PLANT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORCHID.get(), RenderType.cutout());
 	}
-	
+
+	private void setup(final FMLCommonSetupEvent event){
+		event.enqueueWork(() -> {
+			AxeItem.STRIPPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPPABLES)
+					.put(ModBlocks.REDWOOD_LOG.get(), ModBlocks.STRIPPED_REDWOOD_LOG.get())
+					.put(ModBlocks.REDWOOD_WOOD.get(), ModBlocks.STRIPPED_REDWOOD_WOOD.get())
+					.build();
+		});
+	}
 	
 }
