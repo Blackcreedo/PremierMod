@@ -1,6 +1,7 @@
 package fr.black.pm.world;
 
 import fr.black.pm.PremierMod;
+import fr.black.pm.world.gen.ModFlowerGeneration;
 import fr.black.pm.world.gen.ModTreeGeneration;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,5 +13,7 @@ public class WorldGenerationEvents {
     @SubscribeEvent
     public static void ModWorldGeneration(final BiomeLoadingEvent event){
         ModTreeGeneration.generateTrees(event);
+        ModFlowerGeneration.generateFlowers(event);
     }
+
 }
