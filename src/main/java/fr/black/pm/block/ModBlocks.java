@@ -4,6 +4,7 @@ import fr.black.pm.PremierMod;
 import fr.black.pm.block.custom.*;
 import fr.black.pm.item.ModCreativeModeTab;
 import fr.black.pm.item.ModItems;
+import fr.black.pm.world.features.tree.RedwoodTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.effect.MobEffect;
@@ -120,7 +121,24 @@ public class ModBlocks{
 					return 5;
 				}
 			});
+	public static final RegistryObject<Block> REDWOOD_LEAVES =
+			registerBlock("redwood_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)){
+				@Override
+				public boolean isFlammable(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return true;
+				}
+				@Override
+				public int getFlammability(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 60;
+				}
 
+				@Override
+				public int getFireSpreadSpeed(BlockState state, BlockGetter world, BlockPos pos, Direction face) {
+					return 30;
+				}
+			});
+	public static final RegistryObject<Block> REDWOOD_SAPLING =
+			registerBlock("redwood_sapling", () -> new SaplingBlock(new RedwoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
 
 
