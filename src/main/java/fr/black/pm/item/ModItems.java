@@ -128,7 +128,11 @@ public class ModItems
 			() -> new ItemNameBlockItem(ModBlocks.PEPPER_PLANT.get(),
 			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 
-	
+	public static final RegistryObject<Item> CURSE =
+			ITEMS.register("curse", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
+
+
+
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
 	}
