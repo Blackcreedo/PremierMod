@@ -2,6 +2,7 @@ package fr.black.pm;
 
 import com.google.common.collect.ImmutableMap;
 import fr.black.pm.block.ModBlocks;
+import fr.black.pm.effect.ModEffects;
 import fr.black.pm.enchantment.ModEnchantment;
 import fr.black.pm.item.ModItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -28,6 +29,7 @@ public class PremierMod
 		ModItems.register(eventBus);
 		ModBlocks.register(eventBus);
 		ModEnchantment.register(eventBus);
+		ModEffects.register(eventBus);
 		eventBus.addListener(this::setup);
 		eventBus.addListener(this::setupClient);
 		

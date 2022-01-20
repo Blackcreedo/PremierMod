@@ -128,8 +128,16 @@ public class ModItems
 			() -> new ItemNameBlockItem(ModBlocks.PEPPER_PLANT.get(),
 			new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
 
-	public static final RegistryObject<Item> CURSE =
-			ITEMS.register("curse", () -> new Item(new Item.Properties().tab(ModCreativeModeTab.PREMIER_MOD_TAB)));
+	public static final RegistryObject<Item> LIGHTNING_STRIKE_CURSE1 =
+			ITEMS.register("lightning_strike_curse1", () -> new LightningStrikeCurseItem(new Item.Properties().tab(ModCreativeModeTab.CURSES_TAB), 1));
+	public static final RegistryObject<Item> LIGHTNING_STRIKE_CURSE2 =
+			ITEMS.register("lightning_strike_curse2", () -> new LightningStrikeCurseItem(new Item.Properties().tab(ModCreativeModeTab.CURSES_TAB), 2));
+	public static final RegistryObject<Item> LIGHTNING_STRIKE_CURSE3 =
+			ITEMS.register("lightning_strike_curse3", () -> new LightningStrikeCurseItem(new Item.Properties().tab(ModCreativeModeTab.CURSES_TAB), 3));
+	public static final RegistryObject<Item> LIGHTNING_STRIKE_CURSE4 =
+			ITEMS.register("lightning_strike_curse4", () -> new LightningStrikeCurseItem(new Item.Properties().tab(ModCreativeModeTab.CURSES_TAB), 4));
+	public static final RegistryObject<Item> LIGHTNING_STRIKE_CURSE5 =
+			ITEMS.register("lightning_strike_curse5", () -> new LightningStrikeCurseItem(new Item.Properties().tab(ModCreativeModeTab.CURSES_TAB), 5));
 
 
 

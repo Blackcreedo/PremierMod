@@ -30,7 +30,11 @@
 	"item.pm.ruby_boots": "Ruby Boots",
 	"item.pm.titanium_horse_armor": "Titanium Horse Armor",
 	"item.pm.ruby_horse_armor": "Ruby Horse Armor",
-	"item.pm.curse": "Curse",
+	"item.pm.lightning_strike_curse1": "Lightning Strike Curse I",
+	"item.pm.lightning_strike_curse2": "Lightning Strike Curse II",
+	"item.pm.lightning_strike_curse3": "Lightning Strike Curse III",
+	"item.pm.lightning_strike_curse4": "Lightning Strike Curse IV",
+	"item.pm.lightning_strike_curse5": "Lightning Strike Curse V",
 	
 	
 	"block.pm.titanium_ore": "Titanium Ore",
@@ -70,6 +74,7 @@
 	"tooltip.pm.smart_blow_torch_shift": "\nCan transform ore into ingots without smelting\nCan also turn sand to glass instantly\nCharge it by right-Clicking on a Magma Block",
 
 	"enchantment.pm.lightning_striker": "Lightning Striker",
-	"enchantment.pm.lightning_striker_bis": "Lightning Striker Curse"
+	"enchantment.pm.lightning_striker_bis": "Lightning Striker Curse",
 
+	"curse.pm.lightning_strike": "Lightning Strike Curse"
 }
