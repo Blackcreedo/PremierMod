@@ -1,8 +1,10 @@
 package fr.black.pm.block.custom;
 
-import net.minecraft.Util;
+import fr.black.pm.world.dimension.ModDimensions;
+import fr.black.pm.world.dimension.Teleporter;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -26,9 +28,24 @@ public class SpeedyBlock extends Block{
 	@Override
 	public InteractionResult use(BlockState pBlockState, Level pLevel, BlockPos pBlockPos, Player pPlayer,
 			InteractionHand pInteractionHand, BlockHitResult pBlockHitResult) {
-		if(!pLevel.isClientSide()) {
-			if(pInteractionHand == InteractionHand.MAIN_HAND) {
-				pPlayer.sendMessage(new TextComponent("SpeedyBlock have been right clicked"), Util.NIL_UUID);
+		if (!pLevel.isClientSide()) {
+			if (!pPlayer.isCrouching()) {
+				MinecraftServer server = pLevel.getServer();
+
+				if (server != null) {
+					if (pLevel.dimension() == ModDimensions.FIRST_DIMENSION) {
+						ServerLevel overWorld = server.getLevel(Level.OVERWORLD);
+						if (overWorld != null) {
+							pPlayer.changeDimension(overWorld, new Teleporter(pBlockPos, false));
+						}
+					} else {
+						ServerLevel firstDimension = server.getLevel(ModDimensions.FIRST_DIMENSION);
+						if (firstDimension != null) {
+							pPlayer.changeDimension(firstDimension, new Teleporter(pBlockPos, true));
+						}
+					}
+					return InteractionResult.SUCCESS;
+				}
 			}
 		}
 		return super.use(pBlockState, pLevel, pBlockPos, pPlayer, pInteractionHand, pBlockHitResult);
