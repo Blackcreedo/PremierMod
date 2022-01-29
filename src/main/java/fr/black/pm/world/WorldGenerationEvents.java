@@ -1,6 +1,7 @@
 package fr.black.pm.world;
 
 import fr.black.pm.PremierMod;
+import fr.black.pm.world.gen.ModBiomeGeneration;
 import fr.black.pm.world.gen.ModFlowerGeneration;
 import fr.black.pm.world.gen.ModOreGeneration;
 import fr.black.pm.world.gen.ModTreeGeneration;
@@ -16,6 +17,7 @@ public class WorldGenerationEvents {
         ModOreGeneration.generateOres(event);
         ModTreeGeneration.generateTrees(event);
         ModFlowerGeneration.generateFlowers(event);
+        ModBiomeGeneration.generationBiomes();
     }
 
 }
