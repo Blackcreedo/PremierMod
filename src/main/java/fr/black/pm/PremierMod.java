@@ -5,6 +5,7 @@ import fr.black.pm.block.ModBlocks;
 import fr.black.pm.effect.ModEffects;
 import fr.black.pm.enchantment.ModEnchantment;
 import fr.black.pm.item.ModItems;
+import fr.black.pm.tileEntities.ModTileEntities;
 import fr.black.pm.world.biome.ModBiomes;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -32,6 +33,7 @@ public class PremierMod
 		ModEnchantment.register(eventBus);
 		ModEffects.register(eventBus);
 		ModBiomes.register(eventBus);
+		ModTileEntities.register(eventBus);
 		eventBus.addListener(this::setup);
 		eventBus.addListener(this::setupClient);
 		
