@@ -64,10 +64,12 @@
 	"block.pm.redwood_planks": "Redwood Planks",
 	"block.pm.redwood_leaves": "Redwood Leaves",
 	"block.pm.redwood_sapling": "Redwood Sapling",
+	"block.pm.lightning_channeler": "Lightning Channeler",
 
 	
 	
 	"itemGroup.premierModTab": "Premier Mod",
+	"itemGroup.curses": "Curses",
 	
 	
 	"tooltip.pm.smart_blow_torch": "Press \u00A7eSHIFT\u00A7r for more informations",
