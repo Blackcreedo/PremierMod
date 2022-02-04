@@ -78,5 +78,9 @@
 	"enchantment.pm.lightning_striker": "Lightning Striker",
 	"enchantment.pm.lightning_striker_bis": "Lightning Striker Curse",
 
-	"curse.pm.lightning_strike": "Lightning Strike Curse"
+	"curse.pm.lightning_strike": "Lightning Strike Curse",
+
+	"block.pm.powergen": "Power Generator",
+	"message.powergen": "Power generator generating %s per tick!",
+	"screen.powergen": "Power generator"
 }

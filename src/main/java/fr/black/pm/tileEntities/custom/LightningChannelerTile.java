@@ -1,4 +1,4 @@
-package fr.black.pm.tileEntities.custom;
+/*package fr.black.pm.tileEntities.custom;
 
 import fr.black.pm.item.ModItems;
 import fr.black.pm.tileEntities.ModTileEntities;
@@ -96,3 +96,4 @@ public class LightningChannelerTile extends BlockEntity {
         }
     }
 }
+*/

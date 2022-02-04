@@ -6,7 +6,9 @@ import fr.black.pm.effect.ModEffects;
 import fr.black.pm.enchantment.ModEnchantment;
 import fr.black.pm.item.ModItems;
 import fr.black.pm.tileEntities.ModTileEntities;
+import fr.black.pm.tileEntities.custom.PowergenScreen;
 import fr.black.pm.world.biome.ModBiomes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.AxeItem;
@@ -51,6 +53,13 @@ public class PremierMod
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORCHID.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.REDWOOD_LEAVES.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(ModBlocks.REDWOOD_SAPLING.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(ModTileEntities.POWERGEN.get(), RenderType.translucent());
+
+		event.enqueueWork(() -> {
+			MenuScreens.register(ModTileEntities.POWERGEN_CONTAINER.get(), PowergenScreen::new);
+		});
+
+
 	}
 
 	private void setup(final FMLCommonSetupEvent event){
