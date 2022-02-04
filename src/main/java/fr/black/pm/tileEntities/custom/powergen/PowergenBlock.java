@@ -1,4 +1,4 @@
-package fr.black.pm.tileEntities.custom;
+package fr.black.pm.tileEntities.custom.powergen;
 
 
 import net.minecraft.ChatFormatting;

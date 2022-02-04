@@ -65,6 +65,7 @@
 	"block.pm.redwood_leaves": "Redwood Leaves",
 	"block.pm.redwood_sapling": "Redwood Sapling",
 	"block.pm.lightning_channeler": "Lightning Channeler",
+	"block.pm.powergen": "Power Generator",
 
 	
 	
@@ -80,7 +81,9 @@
 
 	"curse.pm.lightning_strike": "Lightning Strike Curse",
 
-	"block.pm.powergen": "Power Generator",
 	"message.powergen": "Power generator generating %s per tick!",
-	"screen.powergen": "Power generator"
+	"screen.powergen": "Power generator",
+
+	"message.lightning_channeler": "Generate Firestone with Ruby",
+	"screen.lightning_channeler": "Lightning Channeler"
 }

@@ -1,4 +1,4 @@
-package fr.black.pm.tileEntities.custom;
+package fr.black.pm.tileEntities.custom.powergen;
 
 import fr.black.pm.energy.CustomEnergyStorage;
 import fr.black.pm.tileEntities.ModTileEntities;

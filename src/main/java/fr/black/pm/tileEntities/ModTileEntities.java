@@ -4,9 +4,12 @@ import fr.black.pm.block.ModBlocks;
 import fr.black.pm.PremierMod;
 import fr.black.pm.item.ModCreativeModeTab;
 import fr.black.pm.item.ModItems;
-import fr.black.pm.tileEntities.custom.PowergenBlock;
-import fr.black.pm.tileEntities.custom.PowergenBlockEntity;
-import fr.black.pm.tileEntities.custom.PowergenContainer;
+import fr.black.pm.tileEntities.custom.lightningChanneler.LightningChannelerBlock;
+import fr.black.pm.tileEntities.custom.lightningChanneler.LightningChannelerBlockEntity;
+import fr.black.pm.tileEntities.custom.lightningChanneler.LightningChannelerContainer;
+import fr.black.pm.tileEntities.custom.powergen.PowergenBlock;
+import fr.black.pm.tileEntities.custom.powergen.PowergenBlockEntity;
+import fr.black.pm.tileEntities.custom.powergen.PowergenContainer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -34,6 +37,13 @@ public class ModTileEntities {
             BLOCK_ENTITIES.register("powergen", () -> BlockEntityType.Builder.of(PowergenBlockEntity::new, POWERGEN.get()).build(null));
     public static final RegistryObject<MenuType<PowergenContainer>> POWERGEN_CONTAINER =
             CONTAINERS.register("powergen", () -> IForgeContainerType.create((windowId, inv, data) -> new PowergenContainer(windowId,data.readBlockPos(), inv, inv.player)));
+
+
+    public static final RegistryObject<Block> LIGHTNING_CHANNELER = registerBlock("lightning_channeler", LightningChannelerBlock::new);
+    public static final RegistryObject<BlockEntityType<LightningChannelerBlockEntity>> LIGHTNING_CHANNELER_BLOCKENTITY =
+            BLOCK_ENTITIES.register("lightning_channeler", () -> BlockEntityType.Builder.of(LightningChannelerBlockEntity::new, LIGHTNING_CHANNELER.get()).build(null));
+    public static final RegistryObject<MenuType<LightningChannelerContainer>> LIGHTNING_CHANNELER_CONTAINER =
+            CONTAINERS.register("lightning_channeler", () -> IForgeContainerType.create((windowId, inv, data) -> new LightningChannelerContainer(windowId,data.readBlockPos(), inv, inv.player)));
 
 
 

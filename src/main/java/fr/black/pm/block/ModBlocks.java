@@ -139,9 +139,6 @@ public class ModBlocks{
 	public static final RegistryObject<Block> REDWOOD_SAPLING =
 			registerBlock("redwood_sapling", () -> new SaplingBlock(new RedwoodTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-	public static final RegistryObject<Block> LIGHTNING_CHANNELER =
-			registerBlock("lightning_channeler", () -> new LightningChanneler(BlockBehaviour.Properties.of(Material.AMETHYST).strength(5f).requiresCorrectToolForDrops()));
-
 
 
 

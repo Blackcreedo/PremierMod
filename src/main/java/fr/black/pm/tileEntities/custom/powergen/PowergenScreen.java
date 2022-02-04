@@ -1,4 +1,4 @@
-package fr.black.pm.tileEntities.custom;
+package fr.black.pm.tileEntities.custom.powergen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import fr.black.pm.PremierMod;
